@@ -36,6 +36,16 @@ body {
   padding: 0;
 }
 
+@media (max-width: 600px)  or (max-height: 600px){
+  .box{
+    /* width: calc(100vw / 3px); */
+    transform: scale(0.48);
+  }
+  .text>p{
+    font-size: 1.51rem;
+  }
+}
+
 .text{
   margin-top: 4.5rem;
   width: 80%;
