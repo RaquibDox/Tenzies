@@ -20,6 +20,10 @@ body {
 
 }
 
+*{
+  scroll-behavior: smooth;
+}
+
 .box{
   min-height: 620px;
   width: 620px;
@@ -83,7 +87,20 @@ body {
     -webkit-user-select: none;
      -khtml-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none; 
+        -ms-user-select: none;
+            user-select: none; 
+}
+
+.attempts{
+  font-size: 3rem;
+  font-weight: 600;
+  color: #47852a;
+  /* stopping selection */
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
             user-select: none; 
 }
 

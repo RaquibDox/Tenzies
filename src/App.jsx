@@ -7,6 +7,7 @@ import useWindowSize from 'react-use/lib/useWindowSize'
 
 function App() {
 
+  const [countRoll, setCountRoll] = useState(0);
   const [dice, setDice] = useState(allNewDice())
   // console.log(dice);
   const [tenzies ,setTenzies] = useState(false)
@@ -74,10 +75,14 @@ function App() {
   }
 
   function rollDice(){
-    if(!tenzies)
-    setDice(getNewDice())
-    else
-    setDice(allNewDice())
+    if(!tenzies){
+      setDice(getNewDice())
+      setCountRoll(prev => prev +1);
+    }
+    else{
+      setDice(allNewDice())
+      setCountRoll(0)
+    }
   }
 
   const diceElements = dice.map(die => <Die 
@@ -99,6 +104,7 @@ function App() {
           <div className="dice-container">
                 {diceElements}
           </div>
+          {tenzies && <div className='attempts'>{countRoll}</div>}
           <button 
             className='roll'
             onClick={rollDice}
